@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
-const Form = () => {
+const EditForm = () => {
     const data = {
         customerType: "",
         customerName: "",
@@ -30,6 +31,9 @@ const Form = () => {
             })
             .catch((err) => console.log(err));
     }
+    let { id } = useParams();
+
+    console.log("id===>" + id);
 
     return (
         <>
@@ -131,4 +135,4 @@ const Form = () => {
         </>
     );
 };
-export default Form;
+export default EditForm;
